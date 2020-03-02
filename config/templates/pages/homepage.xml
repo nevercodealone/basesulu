@@ -30,7 +30,7 @@
             </meta>
 
             <params>
-                <param name="type" value="page" />
+                <param name="resourceKey" value="page" />
             </params>
         </property>
     </properties>
