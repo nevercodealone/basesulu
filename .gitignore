@@ -39,3 +39,8 @@ node_modules
 
 # System files
 .DS_Store
+
+###> phpunit/phpunit ###
+/phpunit.xml
+.phpunit.result.cache
+###< phpunit/phpunit ###

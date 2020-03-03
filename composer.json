@@ -50,6 +50,9 @@
         "zendframework/zendsearch": "^2.0.0rc6"
     },
     "require-dev": {
+        "codeception/codeception": "^4.1",
+        "codeception/module-asserts": "^1.1",
+        "codeception/module-webdriver": "^1.0",
         "phpcr/phpcr-shell": "^1.0",
         "symfony/debug-bundle": "^4.3",
         "symfony/error-handler": "^4.4",
