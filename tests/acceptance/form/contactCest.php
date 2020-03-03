@@ -18,4 +18,13 @@ class contactCest
         $required = $I->grabAttributeFrom($page::$formEmail, 'required');
         $I->assertSame('true', $required);
     }
+
+
+    public function sentValidEmail(AcceptanceTester $I, Base $page)
+    {
+        $email = 'testify' . time() . '@nevercodealone.de';
+        $I->fillField($page::$formEmail, $email);
+        $I->click($page::$formSubmit);
+        $I->waitForText($page::$formSuccessText);
+    }
 }

@@ -12,4 +12,6 @@ class Base
 
     public static $URLFORM = '/de/formular';
     public static $formEmail = '#dynamic_form1_email';
+    public static $formSubmit = '#dynamic_form1_submit';
+    public static $formSuccessText = 'Danke';
 }
