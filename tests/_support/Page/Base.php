@@ -9,4 +9,7 @@ class Base
     public static $navLangEn = '#navLanguage > li:nth-child(2) > a';
 
     public static $startpageHeadline = 'h1';
+
+    public static $URLFORM = '/de/formular';
+    public static $formEmail = '#dynamic_form1_email';
 }
