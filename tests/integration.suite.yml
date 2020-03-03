@@ -1,0 +1,6 @@
+actor: IntegrationTester
+modules:
+    enabled:
+        - WebDriver
+        - Asserts
+        - Db

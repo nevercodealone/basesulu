@@ -44,6 +44,9 @@
     "codeception/module-asserts": {
         "version": "1.1.1"
     },
+    "codeception/module-db": {
+        "version": "1.0.1"
+    },
     "codeception/module-webdriver": {
         "version": "1.0.3"
     },

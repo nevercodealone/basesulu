@@ -24,5 +24,9 @@ modules:
       clear_cookies: false
       capabilities:
         unexpectedAlertBehaviour: 'ignore'
+    Db:
+      dsn: 'mysql:host=%DATABASE_HOST%:%DATABASE_PORT%;dbname=%DATABASE_NAME%'
+      user: '%DATABASE_USER%'
+      password: '%DATABASE_PASS%'
 params:
   - .env
