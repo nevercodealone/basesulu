@@ -1,0 +1,7 @@
+{% set snippets = sulu_snippet_load_by_area('footer') %}
+{% set content = snippets.content %}
+<footer>
+    <h1>{{ content.footerHeadline }}</h1>
+    <h2>{{ content.footerSubline }}</h2>
+    <p>Copyright {{ 'now'|date('Y') }} SULU</p>
+</footer>

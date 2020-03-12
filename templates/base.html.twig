@@ -70,11 +70,7 @@
         {% block aside %}{% endblock %}
     </aside>
 
-    <footer>
-        {% block footer %}
-            <p>Copyright {{ 'now'|date('Y') }} SULU</p>
-        {% endblock %}
-    </footer>
+    {% include "snippets/footer.html.twig" %}
 
     {% block javascripts %}{% endblock %}
 </body>
