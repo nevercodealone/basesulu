@@ -14,6 +14,11 @@ Do composer install with ddev
 $ ddev composer install
 ```
 
+Webpack
+```bash
+$ yarn run encore production --watch
+```
+
 Run composer commands in the web container for db environment to add new packages
 ```bash
 $ ddev ssh --service web   
