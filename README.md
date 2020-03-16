@@ -16,8 +16,12 @@ $ ddev composer install
 
 Webpack
 ```bash
-$ yarn run encore production --watch
+$ yarn encore dev
+$ yarn encore dev --watch
+$ yarn encore production
+$ yarn add jquery popper.js --dev   
 ```
+
 
 Run composer commands in the web container for db environment to add new packages
 ```bash
