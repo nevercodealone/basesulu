@@ -1,0 +1,48 @@
+{% set snippets = sulu_snippet_load_by_area('navigation') %}
+{% set content = snippets.content %}
+{% set organisation = content.organisation[0] %}
+<nav class="navbar navbar-light bg-light">
+    <a class="navbar-brand" href="#">
+        {% set source = organisation.logo.thumbnails['30x30'] %}
+        <img src="{{ source }}" width="30" height="30" class="d-inline-block align-top" alt="">
+        {{ organisation.name }}
+    </a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <div class="navbar-nav mr-auto">
+            {% for item in sulu_navigation_root_tree('main') %}
+                {% dump(item) %}
+                <li class="nav-item {{ content.url|default(content.routePath|default) starts with item.url ? ' active' : '' }} {{ item.children|length > 0 ? ' dropdown' : '' }}">
+                    <a href="{{ sulu_content_path(item.url) }}" title="{{ item.title }}" class="nav-link">
+                        {{ item.title }}
+                    </a>
+                    {% if item.children|length > 0 %}
+                        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                            {% for child in item.children %}
+                                <a href="{{ sulu_content_path(child.url) }}" title="{{ child.title }}" class="dropdown-item">
+                                    {{ child.title }}
+                                </a>
+                            {% endfor %}
+                        </div>
+                    {% endif %}
+                </li>
+            {% endfor %}
+        </ul>
+    </div>
+</nav>
+
+<div class="nav-elem nav-elem--language" id="navLanguage">
+    {% for key, value in urls %}
+        {% set itemUrl = sulu_content_path(value, request.webspaceKey, key)|default('') %}
+
+        {% if itemUrl is not empty %}
+            <li>
+                <a href="{{ itemUrl }}" title="{{ key }}">
+                    {{ key }}
+                </a>
+            </li>
+        {% endif %}
+    {% endfor %}
+</div>
