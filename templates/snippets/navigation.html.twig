@@ -1,6 +1,5 @@
 {% set snippets = sulu_snippet_load_by_area('navigation') %}
-{% set content = snippets.content %}
-{% set organisation = content.organisation[0] %}
+{% set organisation = snippets.content.organisation[0] %}
 <nav class="navbar navbar-expand-lg navbar-light bg-light">
     <a class="navbar-brand" href="#">
         {% set source = organisation.logo.thumbnails['30x30'] %}
@@ -12,14 +11,13 @@
     </button>
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
         <div class="navbar-nav mr-auto">
-            {% for item in sulu_navigation_root_tree('main') %}
-                {% dump(item) %}
-                <li class="nav-item {{ content.url|default(content.routePath|default) starts with item.url ? ' active' : '' }} {{ item.children|length > 0 ? ' dropdown' : '' }}">
-                    <a href="{{ sulu_content_path(item.url) }}" title="{{ item.title }}" class="nav-link">
+            {% for key,item in sulu_navigation_root_tree('main', 2) %}
+                <li class="nav-item{{ content.url|default(content.routePath|default) starts with item.url ? ' active' : '' }}{{ item.children|length > 0 ? ' dropdown' : '' }}">
+                    <a href="{{ item.children|length > 0 ? '#' : sulu_content_path(item.url) }}" title="{{ item.title }}" class="nav-link{{ item.children|length > 0 ? ' dropdown-toggle' : '' }}" {{ item.children|length > 0 ? 'id="navbarDropdownOne" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"' : '' }}>
                         {{ item.title }}
                     </a>
                     {% if item.children|length > 0 %}
-                        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                        <div class="dropdown-menu" aria-labelledby="navbarDropdownOne">
                             {% for child in item.children %}
                                 <a href="{{ sulu_content_path(child.url) }}" title="{{ child.title }}" class="dropdown-item">
                                     {{ child.title }}
