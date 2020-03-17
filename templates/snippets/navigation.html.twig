@@ -1,7 +1,7 @@
 {% set snippets = sulu_snippet_load_by_area('navigation') %}
 {% set content = snippets.content %}
 {% set organisation = content.organisation[0] %}
-<nav class="navbar navbar-light bg-light">
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
     <a class="navbar-brand" href="#">
         {% set source = organisation.logo.thumbnails['30x30'] %}
         <img src="{{ source }}" width="30" height="30" class="d-inline-block align-top" alt="">
