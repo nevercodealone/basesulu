@@ -13,7 +13,7 @@
         <div class="navbar-nav mr-auto">
             {% for key,item in sulu_navigation_root_tree('main', 2) %}
                 <li class="nav-item{{ content.url|default(content.routePath|default) starts with item.url ? ' active' : '' }}{{ item.children|length > 0 ? ' dropdown' : '' }}">
-                    <a href="{{ item.children|length > 0 ? '#' : sulu_content_path(item.url) }}" title="{{ item.title }}" class="nav-link{{ item.children|length > 0 ? ' dropdown-toggle' : '' }}" {{ item.children|length > 0 ? 'id="navbarDropdownOne" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"' : '' }}>
+                    <a href="{{ item.children|length > 0 ? '#' : sulu_content_path(item.url) }}" title="{{ item.title }}" class="nav-link{{ item.children|length > 0 ? ' dropdown-toggle' : '' }}" {{ item.children|length > 0 ? 'id="navbarDropdownOne" ' ~ key ~ ' role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"' : '' }}>
                         {{ item.title }}
                     </a>
                     {% if item.children|length > 0 %}
