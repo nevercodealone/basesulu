@@ -37,5 +37,11 @@
                 <title lang="en">Subline</title>
             </meta>
         </property>
+        <property name="organisation" type="contact_account_selection">
+            <meta>
+                <title lang="en">Organisation</title>
+                <title lang="de">Organisation</title>
+            </meta>
+        </property>
     </properties>
 </template>

@@ -1,7 +1,10 @@
 {% set snippets = sulu_snippet_load_by_area('footer') %}
 {% set content = snippets.content %}
+{% set organisation = snippets.content.organisation[0] %}
 <footer>
     <h1>{{ content.footerHeadline }}</h1>
     <h2>{{ content.footerSubline }}</h2>
+    <h3>{{ organisation.name }} {{ organisation.mainPhone }} {{ organisation.mainEmail }}</h3>
+    <h4>{{ organisation.addresses.0.street }}{{ organisation.addresses.0.number }} {{ organisation.addresses.0.zip }} {{ organisation.addresses.0.city }}</h4>
     <p>Copyright {{ 'now'|date('Y') }} SULU</p>
 </footer>
