@@ -26,7 +26,7 @@ class formCest
         $I->seeInDatabase(
             'fo_dynamics',
             [
-                'email' => $email
+                'data' => '{"email":"' . $email . '"}'
             ]
         );
     }
