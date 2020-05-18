@@ -17,6 +17,7 @@
     {% block style %}
         {{ encore_entry_link_tags('app') }}
     {% endblock %}
+    {% dump(content) %}
 </head>
 <body>
     {% include "snippets/navigation.html.twig" %}
