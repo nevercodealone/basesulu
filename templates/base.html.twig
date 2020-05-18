@@ -1,38 +1,38 @@
 <!DOCTYPE html>
 <html lang="{{ app.request.locale|split('_')[0] }}">
-<head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
-    {% block meta %}
-        {% include "@SuluWebsite/Extension/seo.html.twig" with {
-            "seo": extension.seo|default([]),
-            "content": content|default([]),
-            "urls": urls|default([]),
-            "shadowBaseLocale": shadowBaseLocale|default(),
-            "defaultLocale": app.request.locale
-        } %}
-    {% endblock %}
+        {% block meta %}
+            {% include "@SuluWebsite/Extension/seo.html.twig" with {
+                "seo": extension.seo|default([]),
+                "content": content|default([]),
+                "urls": urls|default([]),
+                "shadowBaseLocale": shadowBaseLocale|default(),
+                "defaultLocale": app.request.locale
+            } %}
+        {% endblock %}
 
-    {% block style %}
-        {{ encore_entry_link_tags('app') }}
-    {% endblock %}
-    {% dump(content) %}
-</head>
-<body>
-    {% include "snippets/navigation.html.twig" %}
-    <section id="content">
-        {% block content %}{% endblock %}
-    </section>
+        {% block style %}
+            {{ encore_entry_link_tags('app') }}
+        {% endblock %}
+        {% dump(content) %}
+    </head>
+    <body>
+        {% include "snippets/navigation.html.twig" %}
+        <section id="content">
+            {% block content %}{% endblock %}
+        </section>
 
-    <aside>
-        {% block aside %}{% endblock %}
-    </aside>
+        <aside>
+            {% block aside %}{% endblock %}
+        </aside>
 
-    {% include "snippets/footer.html.twig" %}
+        {% include "snippets/footer.html.twig" %}
 
-    {% block javascripts %}
-        {{ encore_entry_script_tags('app') }}
-    {% endblock %}
-</body>
+        {% block javascripts %}
+            {{ encore_entry_script_tags('app') }}
+        {% endblock %}
+    </body>
 </html>
