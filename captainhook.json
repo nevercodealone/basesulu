@@ -13,8 +13,12 @@
         ]
     },
     "pre-push": {
-        "enabled": false,
-        "actions": []
+        "enabled": true,
+        "actions": [
+            {
+                "action": "! grep -rl \"dump(\"  templates"
+            }
+        ]
     },
     "pre-commit": {
         "enabled": true,
