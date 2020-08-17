@@ -16,17 +16,17 @@ Import db dump when ddev is up
 $ ddev import-db --src=basesulu.sql
 ```
 
-Do composer install with ddev
+Do `composer install` and `yarn install` with ddev
 ```bash
-$ ddev composer install
+$ ddev composer install && ddev exec yarn install
 ```
 
 Webpack
 ```bash
-$ yarn encore dev
-$ yarn encore dev --watch
-$ yarn encore production
-$ yarn add jquery popper.js --dev   
+$ ddev exec yarn encore dev
+$ ddev exec yarn encore dev --watch
+$ ddev exec yarn encore production
+$ ddev exec yarn add jquery popper.js --dev   
 ```
 
 
