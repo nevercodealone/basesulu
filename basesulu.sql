@@ -1,8 +1,8 @@
--- MySQL dump 10.16  Distrib 10.2.30-MariaDB, for debian-linux-gnu (x86_64)
+-- MySQL dump 10.16  Distrib 10.2.32-MariaDB, for debian-linux-gnu (x86_64)
 --
 -- Host: localhost    Database: db
 -- ------------------------------------------------------
--- Server version	10.2.30-MariaDB-1:10.2.30+maria~bionic-log
+-- Server version	10.2.32-MariaDB-1:10.2.32+maria~bionic-log
 
 /*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
 /*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
@@ -119,7 +119,9 @@ DROP TABLE IF EXISTS `ca_category_translation_medias`;
 CREATE TABLE `ca_category_translation_medias` (
   `idCategoryTranslations` int(11) NOT NULL,
   `idMedia` int(11) NOT NULL,
-  PRIMARY KEY (`idCategoryTranslations`,`idMedia`),
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `position` int(11) NOT NULL DEFAULT 0,
+  PRIMARY KEY (`id`),
   KEY `IDX_39FC41BA17CA14DA` (`idCategoryTranslations`),
   KEY `IDX_39FC41BA7DE8E211` (`idMedia`),
   CONSTRAINT `FK_39FC41BA17CA14DA` FOREIGN KEY (`idCategoryTranslations`) REFERENCES `ca_category_translations` (`id`) ON DELETE CASCADE,
@@ -1450,7 +1452,7 @@ CREATE TABLE `fo_dynamics` (
   CONSTRAINT `FK_EC8AF03030D07CD5` FOREIGN KEY (`idUsersChanger`) REFERENCES `se_users` (`id`) ON DELETE SET NULL,
   CONSTRAINT `FK_EC8AF0309E50CC11` FOREIGN KEY (`formId`) REFERENCES `fo_forms` (`id`) ON DELETE SET NULL,
   CONSTRAINT `FK_EC8AF030DBF11E1D` FOREIGN KEY (`idUsersCreator`) REFERENCES `se_users` (`id`) ON DELETE SET NULL
-) ENGINE=InnoDB AUTO_INCREMENT=9 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=28 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -1459,7 +1461,7 @@ CREATE TABLE `fo_dynamics` (
 
 LOCK TABLES `fo_dynamics` WRITE;
 /*!40000 ALTER TABLE `fo_dynamics` DISABLE KEYS */;
-INSERT INTO `fo_dynamics` VALUES (1,'page','f052aa89-c1e4-4233-b0dc-10b9c3bd4b5b','de','example','formular',NULL,NULL,NULL,NULL,'testify@nevercodealone.de',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,'[]','2020-03-02 14:59:13','2020-03-02 14:59:13',1,NULL,NULL),(2,'page','f052aa89-c1e4-4233-b0dc-10b9c3bd4b5b','de','example','Formular',NULL,NULL,NULL,NULL,'testify1583266139@nevercodealone.de',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,'[]','2020-03-03 20:09:00','2020-03-03 20:09:00',1,NULL,NULL),(3,'page','f052aa89-c1e4-4233-b0dc-10b9c3bd4b5b','de','example','Formular',NULL,NULL,NULL,NULL,'testify1583267847@nevercodealone.de',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,'[]','2020-03-03 20:37:28','2020-03-03 20:37:28',1,NULL,NULL),(4,'page','f052aa89-c1e4-4233-b0dc-10b9c3bd4b5b','de','example','Formular',NULL,NULL,NULL,NULL,'testify1583270005@nevercodealone.de',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,'[]','2020-03-03 21:13:26','2020-03-03 21:13:26',1,NULL,NULL),(5,'page','f052aa89-c1e4-4233-b0dc-10b9c3bd4b5b','de','example','Formular',NULL,NULL,NULL,NULL,'testify1583270686@nevercodealone.de',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,'[]','2020-03-03 21:24:47','2020-03-03 21:24:47',1,NULL,NULL),(6,'page','f052aa89-c1e4-4233-b0dc-10b9c3bd4b5b','de','example','Formular',NULL,NULL,NULL,NULL,'testify1583270707@nevercodealone.de',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,'[]','2020-03-03 21:25:08','2020-03-03 21:25:08',1,NULL,NULL),(7,'page','f052aa89-c1e4-4233-b0dc-10b9c3bd4b5b','de','example','Formular',NULL,NULL,NULL,NULL,'testify1584489276@nevercodealone.de',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,'[]','2020-03-17 23:54:37','2020-03-17 23:54:37',1,NULL,NULL),(8,'page','f052aa89-c1e4-4233-b0dc-10b9c3bd4b5b','de','example','Formular',NULL,NULL,NULL,NULL,'testify1584489841@nevercodealone.de',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,'[]','2020-03-18 00:04:03','2020-03-18 00:04:03',1,NULL,NULL);
+INSERT INTO `fo_dynamics` VALUES (22,'page','f052aa89-c1e4-4233-b0dc-10b9c3bd4b5b','de','example','Formular',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,'{\"email\":\"testify1589054713@nevercodealone.de\"}','2020-05-09 20:05:13','2020-05-09 20:05:13',1,NULL,NULL),(23,'page','f052aa89-c1e4-4233-b0dc-10b9c3bd4b5b','de','example','Formular',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,'{\"email\":\"testify1589054788@nevercodealone.de\"}','2020-05-09 20:06:29','2020-05-09 20:06:29',1,NULL,NULL),(24,'page','f052aa89-c1e4-4233-b0dc-10b9c3bd4b5b','de','example','Formular',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,'{\"email\":\"testify1589054898@nevercodealone.de\"}','2020-05-09 20:08:19','2020-05-09 20:08:19',1,NULL,NULL),(25,'page','f052aa89-c1e4-4233-b0dc-10b9c3bd4b5b','de','example','Formular',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,'{\"email\":\"testify1589054918@nevercodealone.de\"}','2020-05-09 20:08:39','2020-05-09 20:08:39',1,NULL,NULL),(26,'page','f052aa89-c1e4-4233-b0dc-10b9c3bd4b5b','de','example','Formular',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,'{\"email\":\"rolandgolla@gmail.com\"}','2020-05-09 20:11:46','2020-05-09 20:11:46',1,NULL,NULL),(27,'page','f052aa89-c1e4-4233-b0dc-10b9c3bd4b5b','de','example','Formular',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,'{\"email\":\"test1589056582@nevercodealone.de\"}','2020-05-09 20:36:23','2020-05-09 20:36:23',1,NULL,NULL);
 /*!40000 ALTER TABLE `fo_dynamics` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -1646,7 +1648,7 @@ CREATE TABLE `me_collection_meta` (
   KEY `IDX_F8D5E7162B36786B` (`title`),
   KEY `IDX_F8D5E7164180C698` (`locale`),
   CONSTRAINT `FK_F8D5E71693782C96` FOREIGN KEY (`idCollections`) REFERENCES `me_collections` (`id`) ON DELETE CASCADE
-) ENGINE=InnoDB AUTO_INCREMENT=17 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=18 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -1655,7 +1657,7 @@ CREATE TABLE `me_collection_meta` (
 
 LOCK TABLES `me_collection_meta` WRITE;
 /*!40000 ALTER TABLE `me_collection_meta` DISABLE KEYS */;
-INSERT INTO `me_collection_meta` VALUES (1,'System',NULL,'en',1),(2,'Sulu media',NULL,'en',2),(3,'Sulu Medien',NULL,'de',2),(4,'Preview images',NULL,'en',3),(5,'Vorschaubilder',NULL,'de',3),(6,'Sulu contacts',NULL,'en',4),(7,'Sulu Kontakte',NULL,'de',4),(8,'People',NULL,'en',5),(9,'Personen',NULL,'de',5),(10,'Organizations',NULL,'en',6),(11,'Organisationen',NULL,'de',6),(12,'Sulu forms',NULL,'en',7),(13,'System',NULL,'de',1),(14,'Sulu Formulare',NULL,'de',7),(15,'Attachments',NULL,'en',8),(16,'Anhänge',NULL,'de',8);
+INSERT INTO `me_collection_meta` VALUES (1,'System',NULL,'en',1),(2,'Sulu media',NULL,'en',2),(3,'Sulu Medien',NULL,'de',2),(4,'Preview images',NULL,'en',3),(5,'Vorschaubilder',NULL,'de',3),(6,'Sulu contacts',NULL,'en',4),(7,'Sulu Kontakte',NULL,'de',4),(8,'People',NULL,'en',5),(9,'Personen',NULL,'de',5),(10,'Organizations',NULL,'en',6),(11,'Organisationen',NULL,'de',6),(12,'Sulu forms',NULL,'en',7),(13,'System',NULL,'de',1),(14,'Sulu Formulare',NULL,'de',7),(15,'Attachments',NULL,'en',8),(16,'Anhänge',NULL,'de',8),(17,'New folder',NULL,'de',9);
 /*!40000 ALTER TABLE `me_collection_meta` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -1719,7 +1721,7 @@ CREATE TABLE `me_collections` (
   CONSTRAINT `FK_F0D4887CFA3F467` FOREIGN KEY (`idCollectionsMetaDefault`) REFERENCES `me_collection_meta` (`id`) ON DELETE CASCADE,
   CONSTRAINT `FK_F0D4887DBF11E1D` FOREIGN KEY (`idUsersCreator`) REFERENCES `se_users` (`id`) ON DELETE SET NULL,
   CONSTRAINT `FK_F0D4887E67924D6` FOREIGN KEY (`idCollectionTypes`) REFERENCES `me_collection_types` (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=9 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=10 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -1728,7 +1730,7 @@ CREATE TABLE `me_collections` (
 
 LOCK TABLES `me_collections` WRITE;
 /*!40000 ALTER TABLE `me_collections` DISABLE KEYS */;
-INSERT INTO `me_collections` VALUES (1,NULL,1,16,0,'system_collections','2019-08-26 20:33:27','2019-08-26 20:33:27',1,2,NULL,NULL,NULL),(2,NULL,2,5,1,'sulu_media','2019-08-26 20:33:27','2020-03-02 14:45:22',2,2,1,NULL,1),(3,NULL,3,4,2,'sulu_media.preview_image','2019-08-26 20:33:27','2020-03-02 14:45:22',4,2,2,NULL,1),(4,NULL,6,11,1,'sulu_contact','2019-08-26 20:33:27','2020-03-02 14:45:22',6,2,1,NULL,1),(5,NULL,7,8,2,'sulu_contact.contact','2019-08-26 20:33:27','2020-03-02 14:45:22',8,2,4,NULL,1),(6,NULL,9,10,2,'sulu_contact.account','2019-08-26 20:33:27','2020-03-02 14:45:22',10,2,4,NULL,1),(7,NULL,12,15,1,'sulu_form','2020-03-02 14:45:22','2020-03-02 14:45:22',12,2,1,1,1),(8,NULL,13,14,2,'sulu_form.attachments','2020-03-02 14:45:22','2020-03-02 14:45:22',15,2,7,1,1);
+INSERT INTO `me_collections` VALUES (1,NULL,1,16,0,'system_collections','2019-08-26 20:33:27','2019-08-26 20:33:27',1,2,NULL,NULL,NULL),(2,NULL,2,5,1,'sulu_media','2019-08-26 20:33:27','2020-03-02 14:45:22',2,2,1,NULL,1),(3,NULL,3,4,2,'sulu_media.preview_image','2019-08-26 20:33:27','2020-03-02 14:45:22',4,2,2,NULL,1),(4,NULL,6,11,1,'sulu_contact','2019-08-26 20:33:27','2020-03-02 14:45:22',6,2,1,NULL,1),(5,NULL,7,8,2,'sulu_contact.contact','2019-08-26 20:33:27','2020-03-02 14:45:22',8,2,4,NULL,1),(6,NULL,9,10,2,'sulu_contact.account','2019-08-26 20:33:27','2020-03-02 14:45:22',10,2,4,NULL,1),(7,NULL,12,15,1,'sulu_form','2020-03-02 14:45:22','2020-03-02 14:45:22',12,2,1,1,1),(8,NULL,13,14,2,'sulu_form.attachments','2020-03-02 14:45:22','2020-03-02 14:45:22',15,2,7,1,1),(9,NULL,17,18,0,NULL,'2020-08-17 20:38:20','2020-08-17 20:38:20',17,1,NULL,1,1);
 /*!40000 ALTER TABLE `me_collections` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -1805,7 +1807,7 @@ CREATE TABLE `me_file_version_meta` (
   KEY `IDX_AD44B0AD2B36786B` (`title`),
   KEY `IDX_AD44B0AD4180C698` (`locale`),
   CONSTRAINT `FK_AD44B0AD911ADE33` FOREIGN KEY (`idFileVersions`) REFERENCES `me_file_versions` (`id`) ON DELETE CASCADE
-) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -1814,7 +1816,7 @@ CREATE TABLE `me_file_version_meta` (
 
 LOCK TABLES `me_file_version_meta` WRITE;
 /*!40000 ALTER TABLE `me_file_version_meta` DISABLE KEYS */;
-INSERT INTO `me_file_version_meta` VALUES (1,'NCA-Logo-neu',NULL,NULL,NULL,'de',1),(2,'kill-bill-roland-golla',NULL,NULL,NULL,'de',2);
+INSERT INTO `me_file_version_meta` VALUES (1,'NCA-Logo-neu',NULL,NULL,NULL,'de',1),(2,'kill-bill-roland-golla',NULL,NULL,NULL,'de',2),(3,'116221119_287226445890095_4908926979548746883_n',NULL,NULL,NULL,'de',3);
 /*!40000 ALTER TABLE `me_file_version_meta` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -1909,7 +1911,7 @@ CREATE TABLE `me_file_versions` (
   CONSTRAINT `FK_7B6E894530D07CD5` FOREIGN KEY (`idUsersChanger`) REFERENCES `se_users` (`id`) ON DELETE SET NULL,
   CONSTRAINT `FK_7B6E89456B801096` FOREIGN KEY (`idFileVersionsMetaDefault`) REFERENCES `me_file_version_meta` (`id`) ON DELETE CASCADE,
   CONSTRAINT `FK_7B6E8945DBF11E1D` FOREIGN KEY (`idUsersCreator`) REFERENCES `se_users` (`id`) ON DELETE SET NULL
-) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -1918,7 +1920,7 @@ CREATE TABLE `me_file_versions` (
 
 LOCK TABLES `me_file_versions` WRITE;
 /*!40000 ALTER TABLE `me_file_versions` DISABLE KEYS */;
-INSERT INTO `me_file_versions` VALUES (1,'NCA-Logo-neu.png',1,2,17785,1,'{\"segment\":\"07\",\"fileName\":\"nca-logo-neu.png\"}','image/png','{}',1,1,'2020-03-16 22:31:17','2020-03-16 23:46:16',1,1,1,1),(2,'kill-bill-roland-golla.jpg',1,0,156583,0,'{\"segment\":\"07\",\"fileName\":\"kill-bill-roland-golla.jpg\"}','image/jpeg','{}',NULL,NULL,'2020-03-16 22:44:03','2020-03-16 22:44:03',2,2,1,1);
+INSERT INTO `me_file_versions` VALUES (1,'NCA-Logo-neu.png',1,2,17785,1,'{\"segment\":\"07\",\"fileName\":\"nca-logo-neu.png\"}','image/png','{}',1,1,'2020-03-16 22:31:17','2020-03-16 23:46:16',1,1,1,1),(2,'kill-bill-roland-golla.jpg',1,0,156583,0,'{\"segment\":\"07\",\"fileName\":\"kill-bill-roland-golla.jpg\"}','image/jpeg','{}',NULL,NULL,'2020-03-16 22:44:03','2020-03-16 22:44:03',2,2,1,1),(3,'116221119_287226445890095_4908926979548746883_n.jpg',1,0,77737,0,'{\"segment\":\"02\",\"fileName\":\"116221119-287226445890095-4908926979548746883-n.jpg\"}','image/jpeg','{}',NULL,NULL,'2020-08-17 20:38:29','2020-08-17 20:38:29',3,3,1,1);
 /*!40000 ALTER TABLE `me_file_versions` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -1945,7 +1947,7 @@ CREATE TABLE `me_files` (
   CONSTRAINT `FK_CA8D042730D07CD5` FOREIGN KEY (`idUsersChanger`) REFERENCES `se_users` (`id`) ON DELETE SET NULL,
   CONSTRAINT `FK_CA8D04277DE8E211` FOREIGN KEY (`idMedia`) REFERENCES `me_media` (`id`) ON DELETE CASCADE,
   CONSTRAINT `FK_CA8D0427DBF11E1D` FOREIGN KEY (`idUsersCreator`) REFERENCES `se_users` (`id`) ON DELETE SET NULL
-) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -1954,7 +1956,7 @@ CREATE TABLE `me_files` (
 
 LOCK TABLES `me_files` WRITE;
 /*!40000 ALTER TABLE `me_files` DISABLE KEYS */;
-INSERT INTO `me_files` VALUES (1,1,'2020-03-16 22:31:17','2020-03-16 23:42:23',1,1,1),(2,1,'2020-03-16 22:44:03','2020-03-16 22:44:03',2,1,1);
+INSERT INTO `me_files` VALUES (1,1,'2020-03-16 22:31:17','2020-03-16 23:42:23',1,1,1),(2,1,'2020-03-16 22:44:03','2020-03-16 22:44:03',2,1,1),(3,1,'2020-08-17 20:38:29','2020-08-17 20:38:29',3,1,1);
 /*!40000 ALTER TABLE `me_files` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -2017,7 +2019,7 @@ CREATE TABLE `me_media` (
   CONSTRAINT `FK_A694E57293782C96` FOREIGN KEY (`idCollections`) REFERENCES `me_collections` (`id`) ON DELETE CASCADE,
   CONSTRAINT `FK_A694E572D1EB44DE` FOREIGN KEY (`idPreviewImage`) REFERENCES `me_media` (`id`),
   CONSTRAINT `FK_A694E572DBF11E1D` FOREIGN KEY (`idUsersCreator`) REFERENCES `se_users` (`id`) ON DELETE SET NULL
-) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -2026,7 +2028,7 @@ CREATE TABLE `me_media` (
 
 LOCK TABLES `me_media` WRITE;
 /*!40000 ALTER TABLE `me_media` DISABLE KEYS */;
-INSERT INTO `me_media` VALUES (1,'2020-03-16 22:31:17','2020-03-16 23:42:23',2,NULL,6,1,1),(2,'2020-03-16 22:44:03','2020-03-16 22:44:03',2,NULL,5,1,1);
+INSERT INTO `me_media` VALUES (1,'2020-03-16 22:31:17','2020-03-16 23:42:23',2,NULL,6,1,1),(2,'2020-03-16 22:44:03','2020-03-16 22:44:03',2,NULL,5,1,1),(3,'2020-08-17 20:38:29','2020-08-17 20:38:29',2,NULL,9,1,1);
 /*!40000 ALTER TABLE `me_media` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -2548,8 +2550,10 @@ CREATE TABLE `se_roles` (
   `idSecurityTypes` int(11) DEFAULT NULL,
   `idUsersCreator` int(11) DEFAULT NULL,
   `idUsersChanger` int(11) DEFAULT NULL,
+  `role_key` varchar(60) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
   PRIMARY KEY (`id`),
   UNIQUE KEY `UNIQ_13B749A05E237E06` (`name`),
+  UNIQUE KEY `UNIQ_13B749A03EF22FDB` (`role_key`),
   KEY `IDX_13B749A0D02106C0` (`idSecurityTypes`),
   KEY `IDX_13B749A0DBF11E1D` (`idUsersCreator`),
   KEY `IDX_13B749A030D07CD5` (`idUsersChanger`),
@@ -2565,7 +2569,7 @@ CREATE TABLE `se_roles` (
 
 LOCK TABLES `se_roles` WRITE;
 /*!40000 ALTER TABLE `se_roles` DISABLE KEYS */;
-INSERT INTO `se_roles` VALUES (1,'User','Sulu','2019-08-26 20:33:26','2019-08-26 20:33:26',NULL,NULL,NULL);
+INSERT INTO `se_roles` VALUES (1,'User','Sulu','2019-08-26 20:33:26','2019-08-26 20:33:26',NULL,NULL,NULL,NULL);
 /*!40000 ALTER TABLE `se_roles` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -2674,7 +2678,7 @@ CREATE TABLE `se_user_settings` (
 
 LOCK TABLES `se_user_settings` WRITE;
 /*!40000 ALTER TABLE `se_user_settings` DISABLE KEYS */;
-INSERT INTO `se_user_settings` VALUES ('true','sulu_admin.application.navigation_pinned',1),('\"de\"','sulu_admin.content_locale',1),('10','sulu_admin.list_store.account_contacts.list.limit',1),('10','sulu_admin.list_store.accounts.list.limit',1),('10','sulu_admin.list_store.collections.media_overview.limit',1),('\"title\"','sulu_admin.list_store.collections.media_overview.sort_column',1),('\"asc\"','sulu_admin.list_store.collections.media_overview.sort_order',1),('10','sulu_admin.list_store.contacts.list.limit',1),('10','sulu_admin.list_store.form_data.list.limit',1),('10','sulu_admin.list_store.forms.list.limit',1),('10','sulu_admin.list_store.media.contact_media.limit',1),('10','sulu_admin.list_store.media.media_overview.limit',1),('\"65433c8f-d34c-4fc3-a56d-c17d0ed47cd0\"','sulu_admin.list_store.pages.page_list_example.active',1),('10','sulu_admin.list_store.roles.list.limit',1),('10','sulu_admin.list_store.snippets.list.limit',1);
+INSERT INTO `se_user_settings` VALUES ('true','sulu_admin.application.navigation_pinned',1),('\"de\"','sulu_admin.content_locale',1),('10','sulu_admin.list_store.account_contacts.list.limit',1),('10','sulu_admin.list_store.accounts.list.limit',1),('10','sulu_admin.list_store.collections.media_overview.limit',1),('\"title\"','sulu_admin.list_store.collections.media_overview.sort_column',1),('\"asc\"','sulu_admin.list_store.collections.media_overview.sort_order',1),('10','sulu_admin.list_store.contacts.list.limit',1),('100','sulu_admin.list_store.form_data.list.limit',1),('\"created\"','sulu_admin.list_store.form_data.list.sort_column',1),('\"desc\"','sulu_admin.list_store.form_data.list.sort_order',1),('10','sulu_admin.list_store.forms.list.limit',1),('10','sulu_admin.list_store.media.contact_media.limit',1),('[]','sulu_admin.list_store.media.media_overview.filter',1),('10','sulu_admin.list_store.media.media_overview.limit',1),('\"65433c8f-d34c-4fc3-a56d-c17d0ed47cd0\"','sulu_admin.list_store.pages.page_list_example.active',1),('10','sulu_admin.list_store.roles.list.limit',1),('[]','sulu_admin.list_store.snippets.list.filter',1),('10','sulu_admin.list_store.snippets.list.limit',1);
 /*!40000 ALTER TABLE `se_user_settings` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -2717,7 +2721,7 @@ CREATE TABLE `se_users` (
 
 LOCK TABLES `se_users` WRITE;
 /*!40000 ALTER TABLE `se_users` DISABLE KEYS */;
-INSERT INTO `se_users` VALUES (1,'admin','$2y$13$dzrd0PShHLE344iIvtzqDutuMTvGt2BNWZokhJmv2yTnY0SniV4Ua','en','nccZ+wYMK3///LaIlkvaQI/1KZ4RGejMSWgABVoMhak=',0,1,'2020-05-04 19:46:00',NULL,NULL,NULL,NULL,NULL,'d73c6fe53c5c6eb130d70d512e303d8b','admin@example.com',1);
+INSERT INTO `se_users` VALUES (1,'admin','$2y$13$dzrd0PShHLE344iIvtzqDutuMTvGt2BNWZokhJmv2yTnY0SniV4Ua','en','nccZ+wYMK3///LaIlkvaQI/1KZ4RGejMSWgABVoMhak=',0,1,'2020-08-17 20:36:46',NULL,NULL,NULL,NULL,NULL,'d73c6fe53c5c6eb130d70d512e303d8b','admin@example.com',1);
 /*!40000 ALTER TABLE `se_users` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -2844,4 +2848,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2020-05-04 20:09:51
+-- Dump completed on 2020-08-17 20:56:02
